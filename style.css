@@ -20,7 +20,7 @@ body{
 }
 .game_board{
     display: flex;
-    width: 40%;
+    width: 44%;
     height: 70%;
     border: solid 2px red;
     margin: 10px auto;
