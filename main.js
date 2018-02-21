@@ -22,16 +22,21 @@ function diagonalCheckDownRight(playerCoin, column, row){
     column = column-5;
     while(row>=0){
         if(row<=5 && column>=0 && column<=6){
-            column++;
-            row --;
             if(masterArray[column][row]===playerCoin){
-                count++;
-                    if(count===4){
-                        wincondition=true;
-                    }
+                coinCount++;
+                console.log(coinCount);
+
+                if(count===4){
+                    wincondition=true;
+                }
             } else{
                 count=0;
             }
+            column++;
+            row --;
+        } else{
+            column++;
+            row --;
         }
     }
 }
@@ -45,8 +50,8 @@ function horizontalCheck(player, row){
         if(player === masterArray[i][row]){
             count++;
             if(count === 4){
-                wincondition = true;
-                return wincondition;
+                winCondition = true;
+                return winCondition;
             } else {
                 count = 0;
             }
