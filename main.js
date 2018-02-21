@@ -24,7 +24,9 @@ function createCoin(){
     $('<div>').addClass(player)
 }
 function columnClicked(){
-    var column = $(this).attr('class')
+    console.log('column clicked');
+    var column = $(this).attr('class');
+    var rows = []
 }
 
 
@@ -126,6 +128,3 @@ function attachEventHandlers(){
     $('.col').on('click', columnClicked);
 }
 
-function columnClicked(){
-    console.log('column clicked');
-}
