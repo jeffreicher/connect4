@@ -62,10 +62,6 @@ function diagonalCheckDownRight(playerCoin, column, row){
 }
 
 
-// Modal Box
-
-var modal = $('#myModal');
-var btn = $("#openModal")
 
 
 // Function to check horizontal win condition. Player to test and row the coin as added to are parameters.
