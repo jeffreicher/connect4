@@ -27,14 +27,14 @@ function horizontalCheck(player, row){
     var winCondition = false;
     for (var i = 0; i < masterArray.length; i++){
         if(player === masterArray[i][row]){
-            count++
+            count++;
             if(count === 4){
-                win = true;
-                return win;
+                wincondition = true;
+                return wincondition;
             } else {
                 count = 0;
             }
         }
     }
     return false;
-};
+}
