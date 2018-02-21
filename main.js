@@ -5,7 +5,7 @@ function checkForWinner(player, row, column){
         console.log("You are a vertical winner");
     else if(diagonalCheckDownLeft(player, row, column)==="true")
         console.log("You are a forward slash winner");
-    else(diagonalCheckDownRight(player, row, column) === "true")
+    else if(diagonalCheckDownRight(player, row, column) === "true")
         console.log("You sir are a back slash winner");
 }
 
