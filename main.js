@@ -1,4 +1,23 @@
+function checkForWinner(player, row, column){
+    if(horizontalCheck(player, row) === "true")
+        console.log("You sir are a winner");
+    else if(verticalWinCondition(player, column) === "true")
+        console.log("You are a vertical winner");
+    else if(diagonalCheckDownLeft(player, row, column)==="true")
+        console.log("You are a forward slash winner");
+    else(diagonalCheckDownRight(player, row, column) === "true")
+        console.log("You sir are a back slash winner");
+}
 
+function isBoardFull(){
+    for(var i = 0; i < masterArray.length; i++){
+        for(var j = 0; j < masterArray[0].length; j++){
+            if(masterArray[i][j] === null)
+                return false;
+        }
+    }
+    return true;
+}
 
 function createCoin(){
     var player='player1';
@@ -11,14 +30,14 @@ function columnClicked(){
 
 
 
-function verticalWinCondition(playerCoin, column){
+function verticalWinCondition(player, column){
     var coinCount=null;
     var winCondition=false;
     for (var i =0; i<masterArray[column].length; i++){
         if(coinCount===4) {
             winCondition = true;
             return winCondition;
-        } else if(masterArray[column][i]===playerCoin){
+        } else if(masterArray[column][i]===player){
             coinCount++
         } else{
             coinCount=0;
@@ -50,17 +69,17 @@ function diagonalCheckDownLeft(player, row, column){
     return winCondition;
 }
 
-function diagonalCheckDownRight(playerCoin, column, row){
+function diagonalCheckDownRight(player, row, column){
     var coinCount=null;
     var winCondition=false;
     row=row+5;
     column = column-5;
     while(row>=0){
         if(row<=5 && column>=0 && column<=6){
-            if(masterArray[column][row]===playerCoin){
+            if(masterArray[column][row]===player){
                 coinCount++;
                 if(count===4){
-                    wincondition=true;
+                    winCondition=true;
                     return winCondition;
                 }
             } else{
@@ -96,4 +115,18 @@ function horizontalCheck(player, row){
         }
     }
     return winCondition;
+}
+
+$(document).ready(initializeApp);
+
+function initializeApp() {
+    attachEventHandlers();
+}
+
+function attachEventHandlers(){
+    $('.col').on('click', columnClicked);
+}
+
+function columnClicked(){
+    console.log('column clicked');
 }
