@@ -2,34 +2,31 @@
 function verticalWinCondition(playerCoin, column){
     var coinCount=null;
     var winCondition=false;
-    for (var i =0; i<slot.length; i++){
+    for (var i =0; i<masterArray[column].length; i++){
         if(coinCount===4) {
             winCondition = true;
-            return
-        } else if(column[i]===playerCoin){
+            return winCondition;
+        } else if(masterArray[column][i]===playerCoin){
             coinCount++
         } else{
             coinCount=0;
         }
     }
+    return winCondition;
 }
 
-function diagonalCheck(playerCoin, column, row) {
-    var coinCount = null;
-    var wincondition = false;
-}
-function diagonalCheckForward(player, row, column){
+function diagonalCheckDownLeft(player, row, column){
     row += 5;
     column += 5;
     var count = 0;
-    var win = false;
+    var winCondition = false;
     while(row >= 0){
         if(row <= 5 && column >= 0 && column <= 6){
             if(player === masterArray[column][row]){
                 count++;
                 if(count === 4){
-                    win = true;
-                    return win;
+                    winCondition = true;
+                    return winCondition;
                 }
             } else {
                 count = 0;
@@ -38,8 +35,31 @@ function diagonalCheckForward(player, row, column){
         column--;
         row--;
     }
-    return false;
+    return winCondition;
+}
+
+function diagonalCheckDownRight(playerCoin, column, row){
+    var coinCount=null;
+    var winCondition=false;
+    row=row+5;
+    column = column-5;
+    while(row>=0){
+        if(row<=5 && column>=0 && column<=6){
+            if(masterArray[column][row]===playerCoin){
+                coinCount++;
+                if(count===4){
+                    wincondition=true;
+                    return winCondition;
+                }
+            } else{
+                count=0;
+            }
+        }
+        column++;
+        row --;
     }
+    return winCondition;
+}
 
 // Function to check horizontal win condition. Player to test and row the coin as added to are parameters.
 function horizontalCheck(player, row){
@@ -49,12 +69,12 @@ function horizontalCheck(player, row){
         if(player === masterArray[col][row]){
             count++;
             if(count === 4){
-                wincondition = true;
-                return wincondition;
+                winCondition = true;
+                return winCondition;
             } else {
                 count = 0;
             }
         }
     }
-    return false;
+    return winCondition;
 }
