@@ -5,7 +5,7 @@ function checkForWinner(player, row, column){
         console.log("You are a vertical winner");
     else if(diagonalCheckDownLeft(player, row, column)==="true")
         console.log("You are a forward slash winner");
-    else(diagonalCheckDownRight(player, row, column) === "true")
+    else if(diagonalCheckDownRight(player, row, column) === "true")
         console.log("You sir are a back slash winner");
 }
 
@@ -24,6 +24,7 @@ function createCoin(){
     $('<div>').addClass(player)
 }
 function columnClicked(){
+    console.log('column clicked');
     var column = $(this).attr('class');
     var rows = []
 }
@@ -127,6 +128,3 @@ function attachEventHandlers(){
     $('.col').on('click', columnClicked);
 }
 
-function columnClicked(){
-    console.log('column clicked');
-}
