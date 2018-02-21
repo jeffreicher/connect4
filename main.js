@@ -115,3 +115,17 @@ function horizontalCheck(player, row){
     }
     return winCondition;
 }
+
+$(document).ready(initializeApp);
+
+function initializeApp() {
+    attachEventHandlers();
+}
+
+function attachEventHandlers(){
+    $('.col').on('click', columnClicked);
+}
+
+function columnClicked(){
+    console.log('column clicked');
+}
