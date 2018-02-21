@@ -5,7 +5,8 @@ function createCoin(){
     $('<div>').addClass(player)
 }
 function columnClicked(){
-    var column = $(this).attr('class')
+    var column = $(this).attr('class');
+    var rows = []
 }
 
 
