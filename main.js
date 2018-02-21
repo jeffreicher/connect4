@@ -16,9 +16,26 @@ function verticalWinCondition(playerCoin, column){
     }
 }
 
-function diagonalCheck(playerCoin, column, row){
+function diagonalCheckDownRight(playerCoin, column, row){
     var coinCount=null;
     var wincondition=false;
+    row=row+5;
+    column = column-5;
+    while(row>=0){
+        if(row<=5 && column>=0 && column<=6){
+            column++;
+            row --;
+            if(masterArray[column][row]===playerCoin){
+                count++;
+                    if(count===4){
+                        wincondition=true;
+                    }
+            } else{
+                count=0;
+            }
+        }
+    }
+}
 
 
 // Function to check horizontal win condition. Player to test and row the coin as added to are parameters.
