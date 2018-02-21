@@ -1,4 +1,3 @@
-
 function checkForWinner(player, row, column){
     if(horizontalCheck(player, row) === "true")
         console.log("You sir are a winner");
@@ -19,6 +18,15 @@ function isBoardFull(){
     }
     return true;
 }
+
+function createCoin(){
+    var player='player1';
+    $('<div>').addClass(player)
+}
+function columnClicked(){
+    var column = $(this).attr('class')
+}
+
 
 
 function verticalWinCondition(player, column){
@@ -70,7 +78,7 @@ function diagonalCheckDownRight(player, row, column){
             if(masterArray[column][row]===player){
                 coinCount++;
                 if(count===4){
-                    wincondition=true;
+                    winCondition=true;
                     return winCondition;
                 }
             } else{
@@ -82,6 +90,13 @@ function diagonalCheckDownRight(player, row, column){
     }
     return winCondition;
 }
+
+
+// Modal Box
+
+var modal = $('#myModal');
+var btn = $("#openModal")
+
 
 // Function to check horizontal win condition. Player to test and row the coin as added to are parameters.
 function horizontalCheck(player, row){
