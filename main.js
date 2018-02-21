@@ -25,8 +25,17 @@ function createCoin(){
 }
 function columnClicked(){
     console.log('column clicked');
-    var column = $(this).attr('class');
-    var rows = []
+    var column = $(this);
+    var rows = [
+        column.children('.row_0'),
+        column.children('.row_1'),
+        column.children('.row_2'),
+        column.children('.row_3'),
+        column.children('.row_4'),
+        column.children('.row_5')
+
+    ]
+
 }
 
 
