@@ -1,10 +1,9 @@
 
-<<<<<<< HEAD
 
 function verticalWinCondition(playerCoin, column){
     var coinCount=null;
     var winCondition=false;
-    for (var i =0; i<slot.length; i++){
+    for (var i =0; i<column.length; i++){
         if(coinCount===4) {
             winCondition = true;
             return
