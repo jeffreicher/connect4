@@ -3,11 +3,11 @@
 function verticalWinCondition(playerCoin, column){
     var coinCount=null;
     var winCondition=false;
-    for (var i =0; i<column.length; i++){
+    for (var i =0; i<masterArray[column].length; i++){
         if(coinCount===4) {
             winCondition = true;
             return
-        } else if(column[i]===playerCoin){
+        } else if(masterArray[column][i]===playerCoin){
             coinCount++
         } else{
             coinCount=0;
