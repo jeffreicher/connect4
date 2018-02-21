@@ -1,4 +1,15 @@
 
+
+function createCoin(){
+    var player='player1';
+    $('<div>').addClass(player)
+}
+function columnClicked(){
+    var column = $(this).attr('class')
+}
+
+
+
 function verticalWinCondition(playerCoin, column){
     var coinCount=null;
     var winCondition=false;
