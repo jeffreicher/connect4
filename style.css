@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+}
+
+.header{
+    display: flex;
+    height: 8%;
+    border: solid 2px black;
+}
+
+.header > h1{
+    margin: auto;
+}
+.game_board{
+    display: flex;
+    width: 44%;
+    height: 70%;
+    border: solid 2px red;
+    margin: 10px auto;
+}
+
+.player_info{
+    display: flex;
+    width: 40%;
+    height: 18%;
+    border: solid 2px yellow;
+    margin: 0 auto;
+}
+
+.player_1, .player_2{
+    flex-direction: row;
+    width: 50%;
+    height: 100%;
+    border: solid 2px green;    
+}
+
+.col_0, .col_1, .col_2, .col_3, .col_4, .col_5, .col_6{
+    flex-direction: row;
+    width: 16.6666%;
+    height: 100%;
+    border:solid 1px purple;
+    padding: 5px;
+}
+
+.row_0, .row_1, .row_2, .row_3, .row_4, .row_5{
+    flex-direction: column;
+    height: 15.5%;
+    width: 100%;
+    border: solid 1px rgb(2, 200, 250);
+    border-radius: 50%;
+    margin-top: 7px;
+}
