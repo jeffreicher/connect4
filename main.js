@@ -1,48 +1,87 @@
 
-
 function verticalWinCondition(playerCoin, column){
     var coinCount=null;
     var winCondition=false;
-    for (var i =0; i<slot.length; i++){
+    for (var i =0; i<masterArray[column].length; i++){
         if(coinCount===4) {
             winCondition = true;
-            return
-        } else if(column[i]===playerCoin){
+            return winCondition;
+        } else if(masterArray[column][i]===playerCoin){
             coinCount++
         } else{
             coinCount=0;
         }
     }
+    return winCondition;
 }
 
-function diagonalCheck(playerCoin, column, row){
+function diagonalCheckDownLeft(player, row, column){
+    row += 5;
+    column += 5;
+    var count = 0;
+    var winCondition = false;
+    while(row >= 0){
+        if(row <= 5 && column >= 0 && column <= 6){
+            if(player === masterArray[column][row]){
+                count++;
+                if(count === 4){
+                    winCondition = true;
+                    return winCondition;
+                }
+            } else {
+                count = 0;
+            }
+        }
+        column--;
+        row--;
+    }
+    return winCondition;
+}
+
+function diagonalCheckDownRight(playerCoin, column, row){
     var coinCount=null;
-    var wincondition=false;
-
+    var winCondition=false;
+    row=row+5;
+    column = column-5;
+    while(row>=0){
+        if(row<=5 && column>=0 && column<=6){
+            if(masterArray[column][row]===playerCoin){
+                coinCount++;
+                if(count===4){
+                    wincondition=true;
+                    return winCondition;
+                }
+            } else{
+                count=0;
+            }
+        }
+        column++;
+        row --;
+    }
+    return winCondition;
 }
+
 
 // Modal Box
 
 var modal = $('#myModal');
 var btn = $("#openModal")
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-var span = $("")
 
-// When the user clicks on the button, open the modal 
-btn.onclick = function() {
-    modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-    modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
+// Function to check horizontal win condition. Player to test and row the coin as added to are parameters.
+function horizontalCheck(player, row){
+    var count = 0;
+    var winCondition = false;
+    for (var col = 0; i < masterArray.length; col++){
+        if(player === masterArray[col][row]){
+            count++;
+            if(count === 4){
+                winCondition = true;
+                return winCondition;
+            } else {
+                count = 0;
+            }
+        }
     }
+    return winCondition;
 }
