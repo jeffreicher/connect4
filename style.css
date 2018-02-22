@@ -5,8 +5,8 @@
 }
 
 body{
-    height: 100vh;
-    width: 100vw;
+    height: 98vh;
+    width: 98vw;
 }
 
 .header{
@@ -62,11 +62,15 @@ body{
 }
 
 .player1{
-    background-color: red;
+    background-image: url(images/fireball.gif);
+    background-size: 121%;
+    background-position: center;
 }
 
 .player2{
-    background-color: blue;
+    background-image: url(images/shadow.gif);
+    background-size: 277%;
+    background-position: center;
 }
 
 /*  Modal box */
