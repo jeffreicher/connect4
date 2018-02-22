@@ -74,16 +74,31 @@ body > section {
 }
 
 .player1{
-    background-image: url(images/coin-1.gif);
     background-size: 100%;
     background-position: center;
 }
 
 .player2{
-    background-image: url(images/coin-2.gif);
     background-size: 100%;
     background-position: center;
 }
+
+.token1 {
+    background-image: url(images/coin-1.gif);
+}
+
+.token2 {
+    background-image: url(images/coin-2.gif);
+}
+
+.token3 {
+    background-image: url(images/coin-3.gif);
+}
+
+.token4 {
+    background-image: url(images/coin-4.gif);
+}
+
 
 /*  Modal box */
 /* The Modal (background) */
@@ -215,7 +230,7 @@ body > section {
     animation-direction: alternate;
 }*/
 
-@keyframes fade {
+/*@keyframes fade {
     0% {
         opacity: 0;
     }
@@ -230,5 +245,29 @@ body > section {
     }
     100% {
         opacity: 1;
+    }
+}*/
+
+.swashIn {
+    animation-name: swashIn;
+    animation-duration: 1.5s;
+}
+@keyframes swashIn {
+    0% {
+        opacity: 0;
+        transform-origin: 50% 50%;
+        transform: scale(0, 0);
+    }
+
+    90% {
+        opacity: 1;
+        transform-origin: 50% 50%;
+        transform: scale(0.9, 0.9);
+    }
+
+    100% {
+        opacity: 1;
+        transform-origin: 50% 50%;
+        transform: scale(1, 1);
     }
 }
