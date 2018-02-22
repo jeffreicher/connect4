@@ -1,4 +1,3 @@
-
 $(document).ready(initializeApp);
 
 var array6 = [null, null, null, null, null, null];
@@ -141,7 +140,6 @@ function diagonalCheckDownRight(player, row, column){
     return winCondition;
 }
 
-
 // Function to check horizontal win condition. Player to test and row the coin as added to are parameters.
 function horizontalCheck(player, row){
     var count = 0;
@@ -159,12 +157,6 @@ function horizontalCheck(player, row){
     }
     return winCondition;
 }
-
-
-
-
-
-
 // Modal box
 
 var modal = document.getElementById('myModal');

@@ -143,6 +143,10 @@ body{
     height: 100%;
 }
 
+.tokens > img {
+    background
+}
+
 .start_area {
     display: flex;
     height: 8%;
