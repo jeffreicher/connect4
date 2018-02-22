@@ -67,8 +67,6 @@ var tokenArray=[
 
 ];
 
-function changeToken(){
-
 function verticalWinCondition(player, column){
     var coinCount=null;
     var winCondition=false;
