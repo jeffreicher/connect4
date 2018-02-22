@@ -33,8 +33,6 @@ function isBoardFull(){
 }
 
 
-
-
 function columnClicked(){
     console.log('column clicked');
     var column = $(this);
@@ -50,16 +48,33 @@ function columnClicked(){
     var coinPlaced=false;
     for(var i=0; coinPlaced===false && i<rows.length;i++){
         if (rows[i].attr('class')!=='row_'+i+' player1' && rows[i].attr('class')!=='row_'+i+' player2'){
-            rows[i].addClass('player1');
+            rows[i].addClass(game.playerTurn);
             coinPlaced=true;
-            masterArray[columnNumber][i]='p1';
+            masterArray[columnNumber][i]=game.playerTurn;
+            function playerTurnSwap(){
+                if(game.playerTurn === 'p1'){
+                    game.playerTurn = 'p2';
+                } else{
+                    game.playerTurn = 'p1';
+                }
+            }
         }
     }
 }
 
-var settings = {
-    'player1':'coin1'
+var game = {
+    playerTurn:'player1',
+    player1token: '..(url/images/somepic.gif)',
+    player2token:'coin2'
 };
+
+var tokenArray=[
+
+]
+
+function changeToken(){
+    game.player1token;
+}
 
 settings.player1 = 'coin2';
 
@@ -127,8 +142,6 @@ function diagonalCheckDownRight(player, row, column){
 }
 
 
-
-
 // Function to check horizontal win condition. Player to test and row the coin as added to are parameters.
 function horizontalCheck(player, row){
     var count = 0;
@@ -161,9 +174,6 @@ function attachEventHandlers(){
     })
 }
 
-function columnClicked(){
-    console.log('column clicked');
-}
 
 // Modal box
 
