@@ -16,15 +16,25 @@ body{
 body > section {
     font-size: 0;
 }
+body{
+ background: url('./images/body_cover_bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
 
 .section > * {
     font-size: 1rem;
 }
 
+.cover_bg{
+  /* background: url('./images/body_cover_bg.jpg') no-repeat center center fixed;
+  background-size: cover; */
+  width:100vw;
+  height: 100vh;
+}
+
 .header{
     display: flex;
-    height: 8%;
-    border: solid 2px black;
+    height: 10%;    
 }
 
 .header > h1{
@@ -32,25 +42,27 @@ body > section {
 }
 .game_board{
     display: flex;
-    width: 44%;
-    height: 70%;
-    border: solid 2px red;
+    width: 41%;
+    height: 68%;
+    border: none;
     margin: 10px auto;
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 .player_info{
     display: flex;
     width: 40%;
     height: 18%;
-    border: solid 2px yellow;
+    border: solid 2px white;
     margin: 0 auto;
+    background: rgba(255, 255, 255, 0.4);
 }
 
 .player_1_info, .player_2_info{
     flex-direction: row;
     width: 50%;
     height: 100%;
-    border: solid 2px green;   
+    border: solid 2px black;   
     text-align: center;
     text-decoration: underline; 
 }
@@ -61,7 +73,7 @@ body > section {
     flex-direction: column;
     width: 16.6666%;
     height: 100%;
-    border:solid 1px purple;
+    border:none;
     padding: 5px;
 }
 
@@ -69,8 +81,10 @@ body > section {
     flex-direction: column;
     height: 15.5%;
     width: 100%;
-    border: solid 1px rgb(2, 200, 250);
+    border: solid 2px rgb(255, 255, 255);
     border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: inset 0 0 8px #000000;
 }
 
 .player1{
@@ -117,9 +131,10 @@ body > section {
 .player_text_area {
     display: flex;
     align-items: center;
-    border: 2px solid black;
+    border: 2px solid white;
     justify-content: center;
     height: 15%;
+    
 }
 
 .modal_main_content {
