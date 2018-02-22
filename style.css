@@ -33,11 +33,13 @@ body{
 
 .header{
     display: flex;
-    height: 10%;    
+    height: 10%;
+    position:relative
 }
 
-.header > h1{
-    margin: auto;
+.header > img{
+    height: 28vh;
+    margin: -4% auto 0 auto;
 }
 .game_board{
     display: flex;
