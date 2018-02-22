@@ -97,7 +97,7 @@ body{
 }
 
 .token1 {
-    background-image: url(images/coin-1.gif);
+    background-image: url(images/fireball.gif);
 }
 
 .token2 {
@@ -170,10 +170,16 @@ body{
     align-items: center;
 }
 
+.info-tokens{
+    height:64%;
+    width:100%;
+}
+
 .info-tokens > img{
     border-radius: 50%;
     border: 2px black solid;
     margin-top: 5px;
+    height:100%;
 }
 
 .token_container {
