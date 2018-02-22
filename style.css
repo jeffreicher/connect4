@@ -34,11 +34,13 @@ body{
     margin: 0 auto;
 }
 
-.player_1, .player_2{
+.player_1_info, .player_2_info{
     flex-direction: row;
     width: 50%;
     height: 100%;
-    border: solid 2px green;    
+    border: solid 2px green;   
+    text-align: center;
+    text-decoration: underline; 
 }
 
 .col_0, .col_1, .col_2, .col_3, .col_4, .col_5, .col_6{
@@ -58,8 +60,16 @@ body{
     margin-top: 7px;
 }
 
-/*  Modal box Start */
+.player1{
+    background-color: red;
+}
 
+.player2{
+    background-color: blue;
+}
+
+/*  Modal box */
+/* The Modal (background) */
 .modal {
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
