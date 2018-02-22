@@ -12,13 +12,13 @@ var array0 = [null, null, null, null, null, null];
 var masterArray = [array0, array1, array2, array3, array4, array5, array6];
 
 function checkForWinner(player, row, column){
-    if(horizontalCheck(player, row) === "true")
+    if(horizontalCheck(player, row) === true)
         console.log("You sir are a winner");
-    else if(verticalWinCondition(player, column) === "true")
+    else if(verticalWinCondition(player, column) === true)
         console.log("You are a vertical winner");
-    else if(diagonalCheckDownLeft(player, row, column)==="true")
+    else if(diagonalCheckDownLeft(player, row, column)===true)
         console.log("You are a forward slash winner");
-    else if(diagonalCheckDownRight(player, row, column) === "true")
+    else if(diagonalCheckDownRight(player, row, column) === true)
         console.log("You sir are a back slash winner");
 }
 
@@ -52,14 +52,7 @@ function columnClicked(){
             rows[i].addClass(game.playerTurn);
             coinPlaced=true;
             masterArray[columnNumber][i]=game.playerTurn;
-            function playerTurnSwap(){
-                if(game.playerTurn === 'p1'){
-                    game.playerTurn = 'p2';
-                } else{
-                    game.playerTurn = 'p1';
-                }
-            }
-            checkForWinner(game.playerTurn, rows[i], column[columnNumber])
+            checkForWinner(game.playerTurn, i, columnNumber)
         }
     }
 }
@@ -146,15 +139,15 @@ function diagonalCheckDownRight(player, row, column){
 function horizontalCheck(player, row){
     var count = 0;
     var winCondition = false;
-    for (var col = 0; i < masterArray.length; col++){
+    for (var col = 0; col < masterArray.length; col++){
         if(player === masterArray[col][row]){
             count++;
             if(count === 4){
                 winCondition = true;
                 return winCondition;
-            } else {
-                count = 0;
             }
+        }else {
+            count = 0;
         }
     }
     return winCondition;
