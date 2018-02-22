@@ -58,10 +58,9 @@ body{
     margin-top: 7px;
 }
 
-/*  Modal box */
-/* The Modal (background) */
+/*  Modal box Start */
+
 .modal {
-    display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
     padding-top: 100px; /* Location of the box */
@@ -72,6 +71,10 @@ body{
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.hidden {
+    display: none; 
 }
 
 /* Modal Content */
@@ -97,3 +100,4 @@ body{
     text-decoration: none;
     cursor: pointer;
 }
+/*  Modal box End */
