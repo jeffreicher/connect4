@@ -112,14 +112,14 @@ function diagonalCheckDownLeft(player, row, column){
 }
 
 function diagonalCheckDownRight(player, row, column){
-    var coinCount=null;
+    var count=null;
     var winCondition=false;
     row=row+5;
     column = column-5;
     while(row>=0){
         if(row<=5 && column>=0 && column<=6){
             if(masterArray[column][row]===player){
-                coinCount++;
+                count++;
                 if(count===4){
                     winCondition=true;
                     return winCondition;
