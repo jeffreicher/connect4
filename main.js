@@ -58,6 +58,7 @@ function columnClicked(){
 }
 
 var settings = {
+    playerTurn:'p1',
     'player1':'coin1'
 };
 
