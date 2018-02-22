@@ -1,10 +1,12 @@
-var array0 = [null, null, null, null, null, null];
-var array1 = [null, null, null, null, null, null];
-var array2 = [null, null, 'p1', null, null, null];
-var array3 = [null, null, null, null, null, null];
-var array4 = [null, null, null, null, null, null];
-var array5 = [null, null, null, null, null, null];
+
+
 var array6 = [null, null, null, null, null, null];
+var array5 = [null, null, null, null, null, null];
+var array4 = [null, null, null, null, null, null];
+var array3 = [null, null, null, null, null, null];
+var array2 = [null, null, null, null, null, null];
+var array1 = [null, null, null, null, null, null];
+var array0 = [null, null, null, null, null, null];
 
 
 var masterArray = [array0, array1, array2, array3, array4, array5, array6];
@@ -30,13 +32,13 @@ function isBoardFull(){
     return true;
 }
 
-function createCoin(){
-    var player='player1';
-    $('<div>').addClass(player)
-}
+
+
+
 function columnClicked(){
     console.log('column clicked');
     var column = $(this);
+    var columnNumber = parseInt($(this).attr('id'));
     var rows = [
         column.children('.row_0'),
         column.children('.row_1'),
@@ -45,11 +47,21 @@ function columnClicked(){
         column.children('.row_4'),
         column.children('.row_5')
     ];
-    masterArray[0][0]='p1';
-    rows[0].addClass('player1');
-
+    var coinPlaced=false;
+    for(var i=0; coinPlaced===false && i<rows.length;i++){
+        if (rows[i].attr('class')!=='row_'+i+' player1' && rows[i].attr('class')!=='row_'+i+' player2'){
+            rows[i].addClass('player1');
+            coinPlaced=true;
+            masterArray[columnNumber][i]='p1';
+        }
+    }
 }
 
+var settings = {
+    'player1':'coin1'
+};
+
+settings.player1 = 'coin2';
 
 
 function verticalWinCondition(player, column){
