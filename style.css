@@ -83,6 +83,10 @@ body{
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
+.modal h2 {
+    text-align: center;
+    flex-direction: row;
+}
 .hidden {
     display: none; 
 }
@@ -93,19 +97,49 @@ body{
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
+    height: 80%;
     width: 80%;
 }
 
+.player_text_area {
+    border: 2px solid black;
+    text-align: center;
+    height: 25%;
+}
+
+.modal_main_content {
+    display: flex;
+    padding-top: 10px;
+    border: 2px black solid;
+    height: 50%;
+    justify-content: center;
+    text-decoration: underline;
+}
+
+.tokens {
+    border: 2px black solid;
+    width: 25%;
+    height: 30%;
+}
+.start_area {
+    height: 25%;
+    border: 2px black solid;
+}
+
+.player {
+    height: 10%;
+}
+
 /* The Close Button */
-.close {
+.start_game {
     color: #aaaaaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
+.start_game:hover,
+.start_game:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
