@@ -11,6 +11,9 @@ html {
 body{
     height: 100vh;
     width: 100vw;
+    font-family: 'Kaushan Script', cursive;
+    background-color:black;
+    color:white;
 }
 
 body > section {
@@ -88,16 +91,31 @@ body{
 }
 
 .player1{
-    background-image: url(images/coin-1.gif);
     background-size: 100%;
     background-position: center;
 }
 
 .player2{
-    background-image: url(images/coin-2.gif);
     background-size: 100%;
     background-position: center;
 }
+
+.token1 {
+    background-image: url(images/coin-1.gif);
+}
+
+.token2 {
+    background-image: url(images/coin-2.gif);
+}
+
+.token3 {
+    background-image: url(images/coin-3.gif);
+}
+
+.token4 {
+    background-image: url(images/coin-4.gif);
+}
+
 
 /*  Modal box */
 /* The Modal (background) */
@@ -120,12 +138,12 @@ body{
 
 /* Modal Content */
 .modal_content {
-    background-color: #fefefe;
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
     height: 80%;
     width: 40%;
+    background-color: cadetblue;
 }
 
 .player_text_area {
@@ -230,7 +248,7 @@ body{
     animation-direction: alternate;
 }*/
 
-@keyframes fade {
+/*@keyframes fade {
     0% {
         opacity: 0;
     }
@@ -246,4 +264,48 @@ body{
     100% {
         opacity: 1;
     }
+}*/
+
+.swashIn {
+    animation-name: swashIn;
+    animation-duration: 1.5s;
+}
+@keyframes swashIn {
+    0% {
+        opacity: 0;
+        transform-origin: 50% 50%;
+        transform: scale(0, 0);
+    }
+
+    90% {
+        opacity: 1;
+        transform-origin: 50% 50%;
+        transform: scale(0.9, 0.9);
+    }
+
+    100% {
+        opacity: 1;
+        transform-origin: 50% 50%;
+        transform: scale(1, 1);
+    }
+}
+
+@keyframes glowing{
+    0% {
+        box-shadow: inset 0 0 1px 1px gold, 0 0 15px goldenrod;
+    }
+    40% {
+        box-shadow: inset 0 0 20px 7px goldenrod, 0 0 0px gold
+    }
+
+    60% {
+        box-shadow: inset 0 0 20px 7px goldenrod, 0 0 0px gold
+    }
+    100% {
+        box-shadow: inset 0 0 1px 1px gold, 0 0 15px goldenrod;
+    }
+}
+
+.last-token{
+    animation:glowing 2500ms infinite;
 }
