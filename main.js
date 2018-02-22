@@ -52,14 +52,7 @@ function columnClicked(){
             rows[i].addClass(game.playerTurn);
             coinPlaced=true;
             masterArray[columnNumber][i]=game.playerTurn;
-            function playerTurnSwap(){
-                if(game.playerTurn === 'p1'){
-                    game.playerTurn = 'p2';
-                } else{
-                    game.playerTurn = 'p1';
-                }
-            }
-            checkForWinner(game.playerTurn, rows[i], column[columnNumber])
+            checkForWinner(game.playerTurn, i, columnNumber)
         }
     }
 }
@@ -82,7 +75,7 @@ function changeToken(){
 function verticalWinCondition(player, column){
     var coinCount=null;
     var winCondition=false;
-    for (var i =0; i<masterArray[column].length; i++){
+    for (var i =0; i < masterArray[column].length; i++){
         if(coinCount===4) {
             winCondition = true;
             return winCondition;
@@ -146,7 +139,7 @@ function diagonalCheckDownRight(player, row, column){
 function horizontalCheck(player, row){
     var count = 0;
     var winCondition = false;
-    for (var col = 0; i < masterArray.length; col++){
+    for (var col = 0; col < masterArray.length; col++){
         if(player === masterArray[col][row]){
             count++;
             if(count === 4){
