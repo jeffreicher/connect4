@@ -1,4 +1,5 @@
 
+$(document).ready(initializeApp);
 
 var array6 = [null, null, null, null, null, null];
 var array5 = [null, null, null, null, null, null];
@@ -7,6 +8,17 @@ var array3 = [null, null, null, null, null, null];
 var array2 = [null, null, null, null, null, null];
 var array1 = [null, null, null, null, null, null];
 var array0 = [null, null, null, null, null, null];
+
+function initializeApp() {
+    attachEventHandlers();
+}
+
+function attachEventHandlers(){
+    $('.col').on('click', columnClicked);
+    $('#myBtn').on('click', function(){
+        $('#myModal').addClass('hidden');
+    })    
+}
 
 
 var masterArray = [array0, array1, array2, array3, array4, array5, array6];
@@ -82,7 +94,7 @@ function verticalWinCondition(player, column){
     }
     return winCondition;
 }
-}
+
 function diagonalCheckDownLeft(player, row, column){
     row += 5;
     column += 5;
@@ -148,19 +160,9 @@ function horizontalCheck(player, row){
     return winCondition;
 }
 
-$(document).ready(initializeApp);
 
-function initializeApp() {
-    attachEventHandlers();
 
-}
 
-function attachEventHandlers(){
-    $('.col').on('click', columnClicked);
-    $('#myBtn').on('click', function(){
-        $('#myModal').addClass('hidden');
-    })
-}
 
 
 // Modal box
