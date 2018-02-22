@@ -76,9 +76,6 @@ function changeToken(){
     game.player1token;
 }
 
-settings.player1 = 'coin2';
-
-
 function verticalWinCondition(player, column){
     var coinCount=null;
     var winCondition=false;
