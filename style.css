@@ -235,20 +235,20 @@ body > section {
 
 @keyframes glowing{
     0% {
-        box-shadow: 0 0 0px 2px orange;
+        box-shadow: inset 0 0 1px 1px gold, 0 0 15px goldenrod;
     }
     40% {
-        box-shadow: 0 0 10px 5px orange;
+        box-shadow: inset 0 0 20px 7px goldenrod, 0 0 0px gold
     }
 
     60% {
-        box-shadow: 0 0 10px 5px orange;
+        box-shadow: inset 0 0 20px 7px goldenrod, 0 0 0px gold
     }
     100% {
-        box-shadow: 0 0 0px 2px orange;
+        box-shadow: inset 0 0 1px 1px gold, 0 0 15px goldenrod;
     }
 }
 
 .last-token{
-    animation:glowing 1000ms infinite;
+    animation:glowing 2500ms infinite;
 }
