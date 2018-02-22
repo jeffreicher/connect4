@@ -87,6 +87,7 @@ function selectToken(){
         }
         $('.player_text_area > h1').text("Press Start Below");
         assignPlayerTokens();
+        $('.start_area').removeClass('noTouch');
     }
 }
 
@@ -250,7 +251,7 @@ function closeModal(){
     var modal = $('#myModal');
     // var btn = $('#myBtn');
 
-    if($(span.clicked === true)){
+    if($(span.clicked)){
         modal.addClass('hidden');
     }
     // if($(btn.clicked === true)){
