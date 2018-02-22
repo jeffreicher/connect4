@@ -25,14 +25,16 @@ function attachEventHandlers(){
 
 
 function checkForWinner(player, row, column){
-    if(horizontalCheck(player, row) === true)
-        console.log("You sir are a winner");
-    else if(verticalWinCondition(player, column) === true)
-        console.log("You are a vertical winner");
-    else if(diagonalCheckDownLeft(player, row, column)===true)
-        console.log("You are a forward slash winner");
-    else if(diagonalCheckDownRight(player, row, column) === true)
-        console.log("You sir are a back slash winner");
+    if(horizontalCheck(player, row))
+        return true;
+    else if(verticalWinCondition(player, column))
+        return true;
+    else if(diagonalCheckDownLeft(player, row, column))
+        return true;
+    else if(diagonalCheckDownRight(player, row, column))
+        return true;
+    else
+        return false;
 }
 
 function isBoardFull(){
@@ -43,6 +45,18 @@ function isBoardFull(){
         }
     }
     return true;
+}
+
+function clearArrayBoard(){
+    for(var i = 0; i < masterArray.length; i++){
+        for(var j = 0; j < masterArray[0].length; j++){
+            masterArray[i][j] = null;
+        }
+    }
+}
+
+function clearDomBoard(){
+
 }
 
 
@@ -65,7 +79,14 @@ function columnClicked(){
             rows[i].addClass(game.playerTurn);
             coinPlaced=true;
             masterArray[columnNumber][i]=game.playerTurn;
-            checkForWinner(game.playerTurn, i, columnNumber)
+            if(checkForWinner(game.playerTurn, i, columnNumber)){
+                console.log("Somebody has won the game.")
+            } else {
+                if(isBoardFull()){
+                    console.log("The board is full.")
+                }
+            }
+
         }
     }
 }
@@ -168,14 +189,14 @@ var span = document.getElementsByClassName("start_game")[0];
 btn.onclick = function() {
     modal.style.display = "block";
     console.log('button clicked')
-}
+};
 
 span.onclick = function() {
     modal.style.display = "none";
-}
+};
 
 window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
-}
+};
