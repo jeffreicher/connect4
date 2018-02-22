@@ -138,19 +138,20 @@ body{
 .modal_content {
     margin: auto;
     padding: 20px;
-    border: 1px solid white;
+    /*border: 1px solid white;*/
     height: 80%;
     width: 40%;
     background-image: url(images/dungeonBackground.jpg);
     background-size: 138%;
     background-position-x: center;
+    border: 1px solid white;
 
 }
 
 .player_text_area {
     display: flex;
     align-items: center;
-    border: 2px solid white;
+    /*border: 2px solid white;*/
     justify-content: center;
     height: 15%;
     
@@ -158,7 +159,7 @@ body{
 
 .modal_main_content {
     display: flex;
-    border: 2px white solid;
+    /*border: 2px white solid;*/
     height: 75%;
     justify-content: center;
     flex-direction: column;
