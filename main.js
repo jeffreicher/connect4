@@ -46,31 +46,45 @@ function isBoardFull(){
 }
 
 function selectToken(){
-    if(game.player1token === null){
+    if(game.player1token === null) {
         var passSrc = $(this).find("img");
-        $('#p1token img').attr("src",passSrc[0].src);
-        if(this.id === 'one')
+        $('#p1token img').attr("src", passSrc[0].src).addClass('swashIn');
+        if (this.id === 'one') {
             game.player1token = tokenChoices[0];
-        else if(this.id === 'two')
+            game.player1tokenClass = 'token1';
+        }
+        else if (this.id === 'two'){
             game.player1token = tokenChoices[1];
-        else if(this.id === 'three')
+            game.player1tokenClass = 'token2';
+        }
+        else if(this.id === 'three'){
             game.player1token = tokenChoices[2];
-        else
+            game.player1tokenClass = 'token3';
+        }else {
             game.player1token = tokenChoices[3];
+            game.player1tokenClass = 'token4';
+        }
         $(this).addClass('noTouch');
         $('.player_text_area > h1').text("P2 Choose Your Token");
     }
     else if (game.player2token === null){
         var passSrc = $(this).find("img");
-        $('#p2token img').attr("src",passSrc[0].src);
-        if(this.id === 'one')
+        $('#p2token img').attr("src",passSrc[0].src).addClass('swashIn');
+        if(this.id === 'one') {
             game.player2token = tokenChoices[0];
-        else if(this.id === 'two')
+            game.player2tokenClass = 'token1';
+        }
+        else if(this.id === 'two') {
             game.player2token = tokenChoices[1];
-        else if(this.id === 'three')
+            game.player2tokenClass = 'token2';
+        }
+        else if(this.id === 'three') {
             game.player2token = tokenChoices[2];
-        else
+            game.player2tokenClass = 'token3';
+        } else {
             game.player2token = tokenChoices[3];
+            game.player2tokenClass = 'token4';
+        }
         $('.player_text_area > h1').text("Press Start Below");
         assignPlayerTokens();
     }
@@ -78,9 +92,9 @@ function selectToken(){
 
 function assignPlayerTokens(){
     var temp =  $('#p1token img');
-    $('#displayOne img').attr("src", temp[0].src);
+    $('#displayOne img').attr("src", temp[0].src).addClass('swashIn');
     temp = $('#p2token img');
-    $('#displayTwo img').attr("src", temp[0].src);
+    $('#displayTwo img').attr("src", temp[0].src).addClass('swashIn');
 }
 
 
@@ -99,12 +113,13 @@ function clearArrayBoard(){
 
 function clearDomBoard(){
     console.log("The clear dom function got called.");
-    $('.player1').removeClass('player1');
-    $('.player2').removeClass('player2');
+    $('.player1').removeClass('player1 token1 token2 token3 token4');
+    $('.player2').removeClass('player2 token1 token2 token3 token4');
 }
 
 
 function columnClicked(){
+    $('div').removeClass('last-token');
     console.log('column clicked');
     game.playerTurn = (game.playerTurn === "player1") ? "player2" : "player1";
     var column = $(this);
@@ -119,8 +134,13 @@ function columnClicked(){
     ];
     var coinPlaced=false;
     for(var i=0; coinPlaced===false && i<rows.length;i++){
-        if (rows[i].attr('class')!=='row_'+i+' player1' && rows[i].attr('class')!=='row_'+i+' player2'){
-            rows[i].addClass(game.playerTurn);
+        if (rows[i].attr('class')!=='row_'+i+' player1 ' +  game.player1tokenClass && rows[i].attr('class')!=='row_'+i+' player2 ' + game.player2tokenClass){
+            rows[i].addClass(game.playerTurn + ' last-token');
+            if(game.playerTurn === 'player1') {
+                rows[i].addClass(game.player1tokenClass);
+            }else {
+                rows[i].addClass(game.player2tokenClass);
+            }
             coinPlaced=true;
             masterArray[columnNumber][i]=game.playerTurn;
             if(checkForWinner(game.playerTurn, i, columnNumber)){
@@ -138,7 +158,9 @@ function columnClicked(){
 var game = {
     playerTurn:'player2',
     player1token: null,
-    player2token: null
+    player1tokenClass: null,
+    player2token: null,
+    player2tokenClass: null
 };
 
 function verticalWinCondition(player, column){

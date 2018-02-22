@@ -5,14 +5,35 @@
 }
 
 body{
-    height: 98vh;
-    width: 98vw;
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Kaushan Script', cursive;
+    background-color:black;
+    color:white;
+}
+
+body > section {
+    font-size: 0;
+}
+body{
+ background: url('./images/body_cover_bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.section > * {
+    font-size: 1rem;
+}
+
+.cover_bg{
+  /* background: url('./images/body_cover_bg.jpg') no-repeat center center fixed;
+  background-size: cover; */
+  width:100vw;
+  height: 100vh;
 }
 
 .header{
     display: flex;
-    height: 8%;
-    border: solid 2px black;
+    height: 10%;    
 }
 
 .header > h1{
@@ -20,23 +41,27 @@ body{
 }
 .game_board{
     display: flex;
-    width: 44%;
-    height: 70%;
-    border: solid 2px red;
+    width: 41%;
+    height: 68%;
+    border: none;
     margin: 10px auto;
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 .player_info{
     display: flex;
     width: 40%;
     height: 18%;
+    border: solid 2px white;
     margin: 0 auto;
+    background: rgba(255, 255, 255, 0.4);
 }
 
 .player_1_info, .player_2_info{
     flex-direction: row;
     width: 50%;
     height: 100%;
+    border: solid 2px black;   
     text-align: center;
     text-decoration: underline; 
 }
@@ -47,7 +72,7 @@ body{
     flex-direction: column;
     width: 16.6666%;
     height: 100%;
-    border:solid 1px purple;
+    border:none;
     padding: 5px;
 }
 
@@ -55,21 +80,38 @@ body{
     flex-direction: column;
     height: 15.5%;
     width: 100%;
-    border: solid 1px rgb(2, 200, 250);
+    border: solid 2px rgb(255, 255, 255);
     border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: inset 0 0 8px #000000;
 }
 
 .player1{
-    background-image: url(images/fireball.gif);
-    background-size: 121%;
+    background-size: 100%;
     background-position: center;
 }
 
 .player2{
-    background-image: url(images/shadow.gif);
-    background-size: 277%;
+    background-size: 100%;
     background-position: center;
 }
+
+.token1 {
+    background-image: url(images/coin-1.gif);
+}
+
+.token2 {
+    background-image: url(images/coin-2.gif);
+}
+
+.token3 {
+    background-image: url(images/coin-3.gif);
+}
+
+.token4 {
+    background-image: url(images/coin-4.gif);
+}
+
 
 /*  Modal box */
 /* The Modal (background) */
@@ -92,20 +134,21 @@ body{
 
 /* Modal Content */
 .modal_content {
-    background-color: gray;
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
     height: 80%;
     width: 40%;
+    background-color: cadetblue;
 }
 
 .player_text_area {
     display: flex;
     align-items: center;
-    border: 2px solid black;
+    border: 2px solid white;
     justify-content: center;
     height: 15%;
+    
 }
 
 .modal_main_content {
@@ -214,7 +257,7 @@ body{
     animation-direction: alternate;
 }*/
 
-@keyframes fade {
+/*@keyframes fade {
     0% {
         opacity: 0;
     }
@@ -230,4 +273,48 @@ body{
     100% {
         opacity: 1;
     }
+}*/
+
+.swashIn {
+    animation-name: swashIn;
+    animation-duration: 1.5s;
+}
+@keyframes swashIn {
+    0% {
+        opacity: 0;
+        transform-origin: 50% 50%;
+        transform: scale(0, 0);
+    }
+
+    90% {
+        opacity: 1;
+        transform-origin: 50% 50%;
+        transform: scale(0.9, 0.9);
+    }
+
+    100% {
+        opacity: 1;
+        transform-origin: 50% 50%;
+        transform: scale(1, 1);
+    }
+}
+
+@keyframes glowing{
+    0% {
+        box-shadow: inset 0 0 1px 1px gold, 0 0 15px goldenrod;
+    }
+    40% {
+        box-shadow: inset 0 0 20px 7px goldenrod, 0 0 0px gold
+    }
+
+    60% {
+        box-shadow: inset 0 0 20px 7px goldenrod, 0 0 0px gold
+    }
+    100% {
+        box-shadow: inset 0 0 1px 1px gold, 0 0 15px goldenrod;
+    }
+}
+
+.last-token{
+    animation:glowing 2500ms infinite;
 }
