@@ -9,7 +9,7 @@ body{
     width: 100vw;
     font-family: 'Kaushan Script', cursive;
     color:white;
-    background: url('./images/body_cover_bg.jpg') no-repeat center center fixed;
+    background: url('./images/castleBG.jpg') no-repeat center center fixed;
     background-size: cover;
 }
 
@@ -159,8 +159,8 @@ body{
     flex-direction: column;
 }
 
-.player_1_select > div,.player_2_select > div{
-    height: 80%;
+.player_1_select > div, .player_2_select > div{
+    height: 69%;
     width: 100%;
 }
 
@@ -193,8 +193,8 @@ body{
 
 .tokens {
     width: 25%;
-    height: 90%;
     padding: 5px;
+    border-radius:50%
 }
 
 .tokens > img{
