@@ -11,6 +11,9 @@ html {
 body{
     height: 100vh;
     width: 100vw;
+    font-family: 'Kaushan Script', cursive;
+    background-color:black;
+    color:white;
 }
 
 body > section {
@@ -24,7 +27,7 @@ body > section {
 .header{
     display: flex;
     height: 8%;
-    border: solid 2px black;
+    border: solid 2px white;
 }
 
 .header > h1{
@@ -106,12 +109,12 @@ body > section {
 
 /* Modal Content */
 .modal_content {
-    background-color: #fefefe;
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
     height: 80%;
     width: 40%;
+    background-color: cadetblue;
 }
 
 .player_text_area {

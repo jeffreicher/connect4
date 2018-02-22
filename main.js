@@ -228,7 +228,7 @@ function horizontalCheck(player, row){
 var modal = document.getElementById('myModal');
 var btn = document.getElementById("myBtn");
 var span = document.getElementsByClassName("start_game")[0];
-var tokenChoices = ['url(images/coin-1.gif)','url(images/coin-2.gif)', 'url(images/coin-3.gif)', 'url(images/coin-4.gif)'];
+var tokenChoices = ['url(images/fireball.gif)','url(images/coin-2.gif)', 'url(images/coin-3.gif)', 'url(images/coin-4.gif)'];
 
 btn.onclick = function() {
     modal.style.display = "block";
