@@ -267,6 +267,17 @@ body{
     pointer-events: none;
 }
 
+.win-message-container{
+    width: 60%;
+    background: rgba(0,0,0,0.5);
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+    top: 35%;
+}
+
 /*element to add fade to {
     background-color: blue;
     animation-name: fade;

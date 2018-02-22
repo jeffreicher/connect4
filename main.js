@@ -20,6 +20,7 @@ function attachEventHandlers(){
     $('.col').on('click', columnClicked);
     $('.start_area').on('click', closeModal);
     $('.tokens').click(selectToken);
+    $('.reset-button').on('click', clearEntireBoard);
 }
 
 function checkForWinner(player, row, column){
@@ -102,6 +103,11 @@ function assignPlayerTokens(){
 function clearEntireBoard(){
     clearArrayBoard();
     clearDomBoard();
+    $('.win-message-container').addClass('hidden');
+    $('#myModal').removeClass('hidden');
+    $('#p1token img, #p2token img, .info-tokens img').attr('src', 'images/token-back.jpg');
+    $('.game_board').removeClass('noTouch');    
+    $('.game_board div').removeClass('last-token');
 }
 
 function clearArrayBoard(){
@@ -145,6 +151,7 @@ function columnClicked(){
             coinPlaced=true;
             masterArray[columnNumber][i]=game.playerTurn;
             if(checkForWinner(game.playerTurn, i, columnNumber)){
+                displayWinMessage(game.playerTurn, i, columnNumber);
                 console.log("Somebody has won the game.")
             } else {
                 if(isBoardFull()){
@@ -255,4 +262,11 @@ function closeModal(){
     }
 }
 
-
+function displayWinMessage(turn, i, col){
+    debugger;
+    console.log("win message works");
+    if(checkForWinner(turn, i, col) === true){
+        $('.win-message-container').removeClass('hidden');
+        $('.game_board').addClass('noTouch');
+    }
+}
