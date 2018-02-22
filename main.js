@@ -18,11 +18,9 @@ function attachEventHandlers(){
     $('.col').on('click', columnClicked);
     $('#myBtn').on('click', function(){
         $('#myModal').addClass('hidden');
-    })    
+    });
+    $('.tokens').click(selectToken);
 }
-
-
-
 
 function checkForWinner(player, row, column){
     if(horizontalCheck(player, row))
@@ -46,6 +44,39 @@ function isBoardFull(){
     }
     return true;
 }
+
+function selectToken(){
+    if(game.player1token === null){
+        var passSrc = $(this).find("img");
+        $('#p1token img').attr("src",passSrc[0].src);
+        if(this.id === 'one')
+            game.player1token = tokenChoices[0];
+        else if(this.id === 'two')
+            game.player1token = tokenChoices[1];
+        else if(this.id === 'three')
+            game.player1token = tokenChoices[2];
+        else
+            game.player1token = tokenChoices[3];
+        $(this).addClass('noTouch');
+        $('.player_text_area > h1').text("P2 Choose Your Token");
+    }
+    else if (game.player2token === null){
+        var passSrc = $(this).find("img");
+        $('#p2token img').attr("src",passSrc[0].src);
+        if(this.id === 'one')
+            game.player2token = tokenChoices[0];
+        else if(this.id === 'two')
+            game.player2token = tokenChoices[1];
+        else if(this.id === 'three')
+            game.player2token = tokenChoices[2];
+        else
+            game.player2token = tokenChoices[3];
+        $('.player_text_area > h1').text("Press Start Below");
+    }
+}
+
+//function assignPlayerTokens
+
 
 function clearEntireBoard(){
     clearArrayBoard();
@@ -100,13 +131,9 @@ function columnClicked(){
 
 var game = {
     playerTurn:'player2',
-    player1token: '..(url/images/somepic.gif)',
-    player2token:'coin2'
+    player1token: null,
+    player2token: null
 };
-
-var tokenArray=[
-
-];
 
 function verticalWinCondition(player, column){
     var coinCount=null;
@@ -187,10 +214,14 @@ function horizontalCheck(player, row){
     }
     return winCondition;
 }
+
+
+
 // Modal box
 var modal = document.getElementById('myModal');
 var btn = document.getElementById("myBtn");
 var span = document.getElementsByClassName("start_game")[0];
+var tokenChoices = ['url(images/coin1.gif)','url(images/coin2.gif', 'url(images/coin3.gif', 'url(images/coin4.gif'];
 
 btn.onclick = function() {
     modal.style.display = "block";

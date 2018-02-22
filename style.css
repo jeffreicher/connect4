@@ -201,6 +201,10 @@ body > section {
     cursor: pointer;
 }
 
+.noTouch {
+    pointer-events: none;
+}
+
 /*element to add fade to {
     background-color: blue;
     animation-name: fade;
