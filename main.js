@@ -9,6 +9,8 @@ var array1 = [null, null, null, null, null, null];
 var array0 = [null, null, null, null, null, null];
 
 var masterArray = [array0, array1, array2, array3, array4, array5, array6];
+var tokenChoices = ['url(images/coin-1.gif)','url(images/coin-2.gif)', 'url(images/coin-3.gif)', 'url(images/coin-4.gif)'];
+
 
 function initializeApp() {
     attachEventHandlers();
@@ -16,9 +18,7 @@ function initializeApp() {
 
 function attachEventHandlers(){
     $('.col').on('click', columnClicked);
-    $('#myBtn').on('click', function(){
-        $('#myModal').addClass('hidden');
-    });
+    $('.start_area').on('click', closeModal);
     $('.tokens').click(selectToken);
 }
 
@@ -221,25 +221,24 @@ function horizontalCheck(player, row){
     return winCondition;
 }
 
+// Function to close modal after making your selection.
+function closeModal(){
+    console.log('button clicked');
+    var span = $('.start_game');
+    var modal = $('#myModal');
+    // var btn = $('#myBtn');
 
-
-// Modal box
-var modal = document.getElementById('myModal');
-var btn = document.getElementById("myBtn");
-var span = document.getElementsByClassName("start_game")[0];
-var tokenChoices = ['url(images/coin-1.gif)','url(images/coin-2.gif)', 'url(images/coin-3.gif)', 'url(images/coin-4.gif)'];
-
-btn.onclick = function() {
-    modal.style.display = "block";
-    console.log('button clicked')
-};
-
-span.onclick = function() {
-    modal.style.display = "none";
-};
-
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
+    if($(span.clicked === true)){
+        modal.addClass('hidden');
     }
-};
+    // if($(btn.clicked === true)){
+    //     console.log('btn clicked')
+    //     modal.css('display', 'block');
+    // }
+
+    // span.onclick = function() {
+    //     modal.addClass('hidden');
+    // };
+}
+
+
