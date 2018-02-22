@@ -35,6 +35,7 @@ function isBoardFull(){
 
 function columnClicked(){
     console.log('column clicked');
+    settings.player1 = (settings.player1 === "player1") ? "player2" : "player1";
     var column = $(this);
     var columnNumber = parseInt($(this).attr('id'));
     var rows = [
@@ -63,7 +64,7 @@ function columnClicked(){
 }
 
 var game = {
-    playerTurn:'player1',
+    playerTurn:'player2',
     player1token: '..(url/images/somepic.gif)',
     player2token:'coin2'
 };
