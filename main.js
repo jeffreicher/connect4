@@ -12,13 +12,13 @@ var array0 = [null, null, null, null, null, null];
 var masterArray = [array0, array1, array2, array3, array4, array5, array6];
 
 function checkForWinner(player, row, column){
-    if(horizontalCheck(player, row) === "true")
+    if(horizontalCheck(player, row) === true)
         console.log("You sir are a winner");
-    else if(verticalWinCondition(player, column) === "true")
+    else if(verticalWinCondition(player, column) === true)
         console.log("You are a vertical winner");
-    else if(diagonalCheckDownLeft(player, row, column)==="true")
+    else if(diagonalCheckDownLeft(player, row, column)===true)
         console.log("You are a forward slash winner");
-    else if(diagonalCheckDownRight(player, row, column) === "true")
+    else if(diagonalCheckDownRight(player, row, column) === true)
         console.log("You sir are a back slash winner");
 }
 
@@ -145,9 +145,9 @@ function horizontalCheck(player, row){
             if(count === 4){
                 winCondition = true;
                 return winCondition;
-            } else {
-                count = 0;
             }
+        }else {
+            count = 0;
         }
     }
     return winCondition;
