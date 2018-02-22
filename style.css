@@ -8,16 +8,16 @@ body{
     height: 100vh;
     width: 100vw;
     font-family: 'Kaushan Script', cursive;
-    background-color:black;
     color:white;
+    background: url('./images/body_cover_bg.jpg') no-repeat center center fixed;
+    background-size: cover;
 }
 
 body > section {
     font-size: 0;
 }
 body{
- background: url('./images/body_cover_bg.jpg') no-repeat center center fixed;
-  background-size: cover;
+
 }
 
 .section > * {
