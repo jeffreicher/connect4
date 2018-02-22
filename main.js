@@ -58,6 +58,7 @@ function columnClicked(){
                     game.playerTurn = 'p1';
                 }
             }
+            checkForWinner(game.playerTurn, rows[i], column[columnNumber])
         }
     }
 }
@@ -70,13 +71,11 @@ var game = {
 
 var tokenArray=[
 
-]
+];
 
 function changeToken(){
-    game.player1token;
-}
 
-settings.player1 = 'coin2';
+}
 
 
 function verticalWinCondition(player, column){
