@@ -9,7 +9,7 @@ var array1 = [null, null, null, null, null, null];
 var array0 = [null, null, null, null, null, null];
 
 var masterArray = [array0, array1, array2, array3, array4, array5, array6];
-var tokenChoices = ['url(images/coin-1.gif)','url(images/coin-2.gif)', 'url(images/coin-3.gif)', 'url(images/coin-4.gif)'];
+var tokenChoices = ['url(images/fireball.gif)','url(images/coin-2.gif)', 'url(images/coin-3.gif)', 'url(images/coin-4.gif)'];
 
 
 function initializeApp() {
@@ -87,6 +87,7 @@ function selectToken(){
         }
         $('.player_text_area > h1').text("Press Start Below");
         assignPlayerTokens();
+        $('.start_area').removeClass('noTouch');
     }
 }
 
@@ -249,7 +250,7 @@ function closeModal(){
     var span = $('.start_game');
     var modal = $('#myModal');
 
-    if($(span.clicked === true)){
+    if($(span.clicked)){
         modal.addClass('hidden');
     }
 }
