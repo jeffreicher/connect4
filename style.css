@@ -83,16 +83,12 @@ body{
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
-.modal h2 {
-    text-align: center;
-    flex-direction: row;
-}
 .hidden {
     display: none; 
 }
 
 /* Modal Content */
-.modal-content {
+.modal_content {
     background-color: #fefefe;
     margin: auto;
     padding: 20px;
@@ -109,27 +105,61 @@ body{
 
 .modal_main_content {
     display: flex;
-    padding-top: 10px;
     border: 2px black solid;
-    height: 50%;
+    height: 60%;
     justify-content: center;
     text-decoration: underline;
+    flex-direction: column;
+}
+
+.player_1_select > div,.player_2_select > div{
+    border: 2px black solid;
+    height: 80%;
+    width: 150%;
+}
+
+.player_1_select, .player_2_select {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.token_container {
+    display: flex;
+    flex-direction: row;
+    border: 2px black solid;
+    width: 100%;
+    height: 50%;
 }
 
 .tokens {
     border: 2px black solid;
     width: 25%;
-    height: 30%;
+    height: 100%;
 }
+
 .start_area {
-    height: 25%;
+    display: flex;
+    height: 8%;
+    width: 30%;
+    justify-content: center;
+    align-items: center;
+    float: right;
+    margin-top: 20px;
     border: 2px black solid;
 }
 
 .player {
-    height: 10%;
+    display: flex;
+    height: 50%;
+    justify-content: space-around;
 }
 
+.chosen_token div{
+    border: 2px black solid;
+    height: 80%;
+    width: 30%;
+}
 /* The Close Button */
 .start_game {
     color: #aaaaaa;
