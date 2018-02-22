@@ -35,6 +35,7 @@ function isBoardFull(){
 
 function columnClicked(){
     console.log('column clicked');
+    game.playerTurn = (game.playerTurn === "player1") ? "player2" : "player1";
     var column = $(this);
     var columnNumber = parseInt($(this).attr('id'));
     var rows = [
@@ -64,7 +65,7 @@ function columnClicked(){
 }
 
 var game = {
-    playerTurn:'player1',
+    playerTurn:'player2',
     player1token: '..(url/images/somepic.gif)',
     player2token:'coin2'
 };
@@ -75,8 +76,8 @@ var tokenArray=[
 
 function changeToken(){
 
-}
 
+}
 
 function verticalWinCondition(player, column){
     var coinCount=null;
