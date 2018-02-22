@@ -47,6 +47,11 @@ function isBoardFull(){
     return true;
 }
 
+function clearEntireBoard(){
+    clearArrayBoard();
+    clearDomBoard();
+}
+
 function clearArrayBoard(){
     for(var i = 0; i < masterArray.length; i++){
         for(var j = 0; j < masterArray[0].length; j++){
@@ -56,7 +61,9 @@ function clearArrayBoard(){
 }
 
 function clearDomBoard(){
-
+    console.log("The clear dom function got called.");
+    $('.player1').removeClass('player1');
+    $('.player2').removeClass('player2');
 }
 
 
@@ -181,7 +188,6 @@ function horizontalCheck(player, row){
     return winCondition;
 }
 // Modal box
-
 var modal = document.getElementById('myModal');
 var btn = document.getElementById("myBtn");
 var span = document.getElementsByClassName("start_game")[0];
