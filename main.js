@@ -1,5 +1,6 @@
 $(document).ready(initializeApp);
 
+//Set up our global variables. Arrays will be used to keep track of game board logic
 var array6 = [null, null, null, null, null, null];
 var array5 = [null, null, null, null, null, null];
 var array4 = [null, null, null, null, null, null];
@@ -7,7 +8,6 @@ var array3 = [null, null, null, null, null, null];
 var array2 = [null, null, null, null, null, null];
 var array1 = [null, null, null, null, null, null];
 var array0 = [null, null, null, null, null, null];
-
 var masterArray = [array0, array1, array2, array3, array4, array5, array6];
 var tokenChoices = ['url(images/fireball.gif)','url(images/coin-2.gif)', 'url(images/coin-3.gif)', 'url(images/coin-4.gif)'];
 
@@ -22,6 +22,7 @@ function attachEventHandlers(){
     $('.tokens').click(selectToken);
 }
 
+//Function that checks for winner. Takes in parameters of player, row and column to check for all possible win conditions.
 function checkForWinner(player, row, column){
     if(horizontalCheck(player, row))
         return true;
@@ -35,6 +36,7 @@ function checkForWinner(player, row, column){
         return false;
 }
 
+//Allows us to test if the game board is full by looping through our masterArray.
 function isBoardFull(){
     for(var i = 0; i < masterArray.length; i++){
         for(var j = 0; j < masterArray[0].length; j++){
@@ -45,6 +47,7 @@ function isBoardFull(){
     return true;
 }
 
+//This function creates functionality for the player selecting their token
 function selectToken(){
     if(game.player1token === null) {
         var passSrc = $(this).find("img");
@@ -91,6 +94,7 @@ function selectToken(){
     }
 }
 
+//This function is designed to work with the selectToken function. It updates the game board display on what token was selected.
 function assignPlayerTokens(){
     var temp =  $('#p1token img');
     $('#displayOne img').attr("src", temp[0].src).addClass('swashIn');
@@ -98,12 +102,13 @@ function assignPlayerTokens(){
     $('#displayTwo img').attr("src", temp[0].src).addClass('swashIn');
 }
 
-
+//This function calls clearArrayBoard and clearDomBoard to clear everything
 function clearEntireBoard(){
     clearArrayBoard();
     clearDomBoard();
 }
 
+//This function will clear the masterArray and reset everything to null.
 function clearArrayBoard(){
     for(var i = 0; i < masterArray.length; i++){
         for(var j = 0; j < masterArray[0].length; j++){
@@ -112,13 +117,15 @@ function clearArrayBoard(){
     }
 }
 
+//This function will clear the classes used to visualize the game board on the dom effectively reseting the game board visually.
 function clearDomBoard(){
     console.log("The clear dom function got called.");
     $('.player1').removeClass('player1 token1 token2 token3 token4');
     $('.player2').removeClass('player2 token1 token2 token3 token4');
 }
 
-
+//This function represents the click functionality of playing the game. Each time it is called the player turn is toggled and the board and masterArray are updated with the
+//correct play move.
 function columnClicked(){
     $('div').removeClass('last-token');
     console.log('column clicked');
@@ -156,6 +163,7 @@ function columnClicked(){
     }
 }
 
+//This is our object for the game. It is a helper object that is used in other function logic.
 var game = {
     playerTurn:'player2',
     player1token: null,
@@ -164,6 +172,7 @@ var game = {
     player2tokenClass: null
 };
 
+//This function checks for the vertical win condition
 function verticalWinCondition(player, column){
     var coinCount=null;
     var winCondition=false;
@@ -180,6 +189,7 @@ function verticalWinCondition(player, column){
     return winCondition;
 }
 
+//This function checks the diagonal win condition similar to a forwardslash
 function diagonalCheckDownLeft(player, row, column){
     row += 5;
     column += 5;
@@ -203,6 +213,7 @@ function diagonalCheckDownLeft(player, row, column){
     return winCondition;
 }
 
+//This function checks the diagonal win condition similar to a backslash
 function diagonalCheckDownRight(player, row, column){
     var count=null;
     var winCondition=false;
