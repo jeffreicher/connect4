@@ -8,6 +8,8 @@ var array2 = [null, null, null, null, null, null];
 var array1 = [null, null, null, null, null, null];
 var array0 = [null, null, null, null, null, null];
 
+var masterArray = [array0, array1, array2, array3, array4, array5, array6];
+
 function initializeApp() {
     attachEventHandlers();
 }
@@ -20,7 +22,7 @@ function attachEventHandlers(){
 }
 
 
-var masterArray = [array0, array1, array2, array3, array4, array5, array6];
+
 
 function checkForWinner(player, row, column){
     if(horizontalCheck(player, row) === true)
