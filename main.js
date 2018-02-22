@@ -248,19 +248,10 @@ function closeModal(){
     console.log('button clicked');
     var span = $('.start_game');
     var modal = $('#myModal');
-    // var btn = $('#myBtn');
 
     if($(span.clicked === true)){
         modal.addClass('hidden');
     }
-    // if($(btn.clicked === true)){
-    //     console.log('btn clicked')
-    //     modal.css('display', 'block');
-    // }
-
-    // span.onclick = function() {
-    //     modal.addClass('hidden');
-    // };
 }
 
 
