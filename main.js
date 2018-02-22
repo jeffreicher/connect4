@@ -17,7 +17,7 @@ function initializeApp() {
 function attachEventHandlers(){
     $('.col').on('click', columnClicked);
     $('#myBtn').on('click', function(){
-        $('#myModal').addClass('hidden');
+        $('#myModal').addClass('hidden');z
     });
     $('.tokens').click(selectToken);
 }
@@ -119,6 +119,7 @@ function clearDomBoard(){
 
 
 function columnClicked(){
+    $('div').removeClass('last-token');
     console.log('column clicked');
     game.playerTurn = (game.playerTurn === "player1") ? "player2" : "player1";
     var column = $(this);
@@ -134,7 +135,7 @@ function columnClicked(){
     var coinPlaced=false;
     for(var i=0; coinPlaced===false && i<rows.length;i++){
         if (rows[i].attr('class')!=='row_'+i+' player1 ' +  game.player1tokenClass && rows[i].attr('class')!=='row_'+i+' player2 ' + game.player2tokenClass){
-            rows[i].addClass(game.playerTurn);
+            rows[i].addClass(game.playerTurn + ' last-token');
             if(game.playerTurn === 'player1') {
                 rows[i].addClass(game.player1tokenClass);
             }else {
@@ -248,7 +249,7 @@ function horizontalCheck(player, row){
 var modal = document.getElementById('myModal');
 var btn = document.getElementById("myBtn");
 var span = document.getElementsByClassName("start_game")[0];
-var tokenChoices = ['url(images/coin-1.gif)','url(images/coin-2.gif)', 'url(images/coin-3.gif)', 'url(images/coin-4.gif)'];
+var tokenChoices = ['url(images/fireball.gif)','url(images/coin-2.gif)', 'url(images/coin-3.gif)', 'url(images/coin-4.gif)'];
 
 btn.onclick = function() {
     modal.style.display = "block";

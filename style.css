@@ -11,6 +11,9 @@ html {
 body{
     height: 100vh;
     width: 100vw;
+    font-family: 'Kaushan Script', cursive;
+    background-color:black;
+    color:white;
 }
 
 body > section {
@@ -24,7 +27,7 @@ body > section {
 .header{
     display: flex;
     height: 8%;
-    border: solid 2px black;
+    border: solid 2px white;
 }
 
 .header > h1{
@@ -121,12 +124,12 @@ body > section {
 
 /* Modal Content */
 .modal_content {
-    background-color: #fefefe;
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
     height: 80%;
     width: 40%;
+    background-color: cadetblue;
 }
 
 .player_text_area {
@@ -270,4 +273,24 @@ body > section {
         transform-origin: 50% 50%;
         transform: scale(1, 1);
     }
+}
+
+@keyframes glowing{
+    0% {
+        box-shadow: inset 0 0 1px 1px gold, 0 0 15px goldenrod;
+    }
+    40% {
+        box-shadow: inset 0 0 20px 7px goldenrod, 0 0 0px gold
+    }
+
+    60% {
+        box-shadow: inset 0 0 20px 7px goldenrod, 0 0 0px gold
+    }
+    100% {
+        box-shadow: inset 0 0 1px 1px gold, 0 0 15px goldenrod;
+    }
+}
+
+.last-token{
+    animation:glowing 2500ms infinite;
 }
