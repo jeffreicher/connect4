@@ -74,14 +74,14 @@ body > section {
 }
 
 .player1{
-    background-image: url(images/fireball.gif);
-    background-size: 121%;
+    background-image: url(images/coin-1.gif);
+    background-size: 100%;
     background-position: center;
 }
 
 .player2{
-    background-image: url(images/shadow.gif);
-    background-size: 277%;
+    background-image: url(images/coin-2.gif);
+    background-size: 100%;
     background-position: center;
 }
 

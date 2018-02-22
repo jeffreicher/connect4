@@ -72,10 +72,16 @@ function selectToken(){
         else
             game.player2token = tokenChoices[3];
         $('.player_text_area > h1').text("Press Start Below");
+        assignPlayerTokens();
     }
 }
 
-//function assignPlayerTokens
+function assignPlayerTokens(){
+    var temp =  $('#p1token img');
+    $('#displayOne img').attr("src", temp[0].src);
+    temp = $('#p2token img');
+    $('#displayTwo img').attr("src", temp[0].src);
+}
 
 
 function clearEntireBoard(){
@@ -221,7 +227,7 @@ function horizontalCheck(player, row){
 var modal = document.getElementById('myModal');
 var btn = document.getElementById("myBtn");
 var span = document.getElementsByClassName("start_game")[0];
-var tokenChoices = ['url(images/coin1.gif)','url(images/coin2.gif', 'url(images/coin3.gif', 'url(images/coin4.gif'];
+var tokenChoices = ['url(images/coin-1.gif)','url(images/coin-2.gif)', 'url(images/coin-3.gif)', 'url(images/coin-4.gif)'];
 
 btn.onclick = function() {
     modal.style.display = "block";
