@@ -266,4 +266,9 @@ function closeModal(){
     }
 }
 
+function magicParticle(){
+    var magicBall = $('<div>');
+    $('#displayOne').append(magicBall);
+    $(magicBall).addClass('magicParticle');
+}
 
