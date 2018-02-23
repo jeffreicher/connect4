@@ -161,7 +161,7 @@ function columnClicked(){
                 $('#displayTwo img').removeClass('holeOut');  
             }
             $('.cover_bg').removeClass('noTouch');
-            }, 500);
+            }, 1000);
             coinPlaced=true;
             masterArray[columnNumber][i]=game.playerTurn;
             if(checkForWinner(game.playerTurn, i, columnNumber)){

@@ -364,7 +364,7 @@ body{
 
 .holeOut {
     animation-name: holeOut;
-    animation-duration: .5s; 
+    animation-duration: 2s;
   }
   @keyframes holeOut {
     0% {
@@ -397,6 +397,6 @@ body{
 }
 
 .last-token{
-    animation:glowing 2500ms infinite;
+    animation:glowing 2500ms infinite, swashIn 250ms;
 }
 
