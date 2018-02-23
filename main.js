@@ -106,7 +106,7 @@ function clearEntireBoard(){
     $('.win-message-container').addClass('hidden');
     $('#myModal').removeClass('hidden');
     $('#p1token img, #p2token img, .info-tokens img').attr('src', 'images/token-back.jpg');
-    $('.game_board').removeClass('noTouch');    
+    $('.game_board, .tokens').removeClass('noTouch');    
     $('.game_board div').removeClass('last-token');
 }
 
@@ -268,5 +268,13 @@ function displayWinMessage(turn, i, col){
     if(checkForWinner(turn, i, col) === true){
         $('.win-message-container').removeClass('hidden');
         $('.game_board').addClass('noTouch');
+        $('#win-message').text(game.playerTurn + " has won!");
+        game = {
+            playerTurn:'player1',
+            player1token: null,
+            player1tokenClass: null,
+            player2token: null,
+            player2tokenClass: null
+        };
     }
 }

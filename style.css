@@ -259,8 +259,11 @@ body{
     pointer-events: none;
 }
 
-.win-message-container{
-    width: 60%;
+.win-message-container {
+    flex-direction: column;
+    justify-content: space-between;
+    height: 30%;
+    width: 40%;
     background: rgba(0,0,0,0.5);
     position: absolute;
     left: 0;
@@ -268,6 +271,23 @@ body{
     margin: auto;
     text-align: center;
     top: 35%;
+}
+
+#win-message {
+    margin-top: 40px;
+    font-size: 50px;
+}
+
+.reset-button {
+    margin-top: 80px;
+    font-size: 20px;
+}
+
+.reset-button:hover,
+.reset-button:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 /*element to add fade to {
