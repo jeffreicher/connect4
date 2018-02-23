@@ -20,6 +20,7 @@ function attachEventHandlers(){
     $('.col').on('click', columnClicked);
     $('.start_area').on('click', closeModal);
     $('.tokens').click(selectToken);
+    $('.reset-button').on('click', clearEntireBoard);
 }
 
 //Function that checks for winner. Takes in parameters of player, row and column to check for all possible win conditions.
@@ -106,6 +107,11 @@ function assignPlayerTokens(){
 function clearEntireBoard(){
     clearArrayBoard();
     clearDomBoard();
+    $('.win-message-container').addClass('hidden');
+    $('#myModal').removeClass('hidden');
+    $('#p1token img, #p2token img, .info-tokens img').attr('src', 'images/token-back.jpg');
+    $('.game_board, .tokens').removeClass('noTouch');    
+    $('.game_board div').removeClass('last-token');
 }
 
 //This function will clear the masterArray and reset everything to null.
@@ -152,6 +158,7 @@ function columnClicked(){
             coinPlaced=true;
             masterArray[columnNumber][i]=game.playerTurn;
             if(checkForWinner(game.playerTurn, i, columnNumber)){
+                displayWinMessage(game.playerTurn, i, columnNumber);
                 console.log("Somebody has won the game.")
             } else {
                 if(isBoardFull()){
@@ -266,9 +273,20 @@ function closeModal(){
     }
 }
 
-function magicParticle(){
-    var magicBall = $('<div>');
-    $('#displayOne').append(magicBall);
-    $(magicBall).addClass('magicParticle');
+function displayWinMessage(turn, i, col){
+    debugger;
+    console.log("win message works");
+    if(checkForWinner(turn, i, col) === true){
+        $('.win-message-container').removeClass('hidden');
+        $('.game_board').addClass('noTouch');
+        $('#win-message').text(game.playerTurn + " has won!");
+        game = {
+            playerTurn:'player1',
+            player1token: null,
+            player1tokenClass: null,
+            player2token: null,
+            player2tokenClass: null
+        };
+    }
 }
 
