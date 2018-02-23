@@ -108,6 +108,7 @@ function clearEntireBoard(){
     $('#p1token img, #p2token img, .info-tokens img').attr('src', 'images/token-back.jpg');
     $('.game_board, .tokens').removeClass('noTouch');    
     $('.game_board div').removeClass('last-token');
+    $('.start_area').addClass('noTouch');
 }
 
 function clearArrayBoard(){
@@ -142,16 +143,31 @@ function columnClicked(){
     var coinPlaced=false;
     for(var i=0; coinPlaced===false && i<rows.length;i++){
         if (rows[i].attr('class')!=='row_'+i+' player1 ' +  game.player1tokenClass && rows[i].attr('class')!=='row_'+i+' player2 ' + game.player2tokenClass){
-            rows[i].addClass(game.playerTurn + ' last-token');
-            if(game.playerTurn === 'player1') {
-                rows[i].addClass(game.player1tokenClass);
-            }else {
-                rows[i].addClass(game.player2tokenClass);
+            if(game.playerTurn === 'player1'){
+                $('#displayOne img').addClass('holeOut');                
+            } else {
+                $('#displayTwo img').addClass('holeOut');
             }
+            debugger;
+            x=i;
+                $('.cover_bg').addClass('noTouch');
+            setTimeout(function(){
+            rows[x].addClass(game.playerTurn + ' last-token');
+            if(game.playerTurn === 'player1') {
+                rows[x].addClass(game.player1tokenClass);
+                $('#displayOne img').removeClass('holeOut');   
+            }else {
+                rows[x].addClass(game.player2tokenClass);
+                $('#displayTwo img').removeClass('holeOut');  
+            }
+            $('.cover_bg').removeClass('noTouch');
+            }, 500);
             coinPlaced=true;
             masterArray[columnNumber][i]=game.playerTurn;
             if(checkForWinner(game.playerTurn, i, columnNumber)){
-                displayWinMessage(game.playerTurn, i, columnNumber);
+                setTimeout(function(){
+                    displayWinMessage(game.playerTurn, i, columnNumber)
+                }, 500);
                 console.log("Somebody has won the game.")
             } else {
                 if(isBoardFull()){
@@ -262,10 +278,19 @@ function closeModal(){
     }
 }
 
-function displayWinMessage(turn, i, col){
-    debugger;
-    console.log("win message works");
-    if(checkForWinner(turn, i, col) === true){
+function displayWinMessage(){
+    if(isBoardFull()){
+        $('.win-message-container').removeClass('hidden');
+        $('.game_board').addClass('noTouch');
+        $('#win-message').text("You're both losers!");
+        game = {
+            playerTurn:'player1',
+            player1token: null,
+            player1tokenClass: null,
+            player2token: null,
+            player2tokenClass: null
+        };
+    } else if(checkForWinner()){
         $('.win-message-container').removeClass('hidden');
         $('.game_board').addClass('noTouch');
         $('#win-message').text(game.playerTurn + " has won!");
@@ -278,3 +303,4 @@ function displayWinMessage(turn, i, col){
         };
     }
 }
+

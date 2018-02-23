@@ -328,7 +328,7 @@ body{
 
 .swashIn {
     animation-name: swashIn;
-    animation-duration: 1.5s;
+    animation-duration: .5s;
 }
 @keyframes swashIn {
     0% {
@@ -350,6 +350,24 @@ body{
     }
 }
 
+.holeOut {
+    animation-name: holeOut;
+    animation-duration: .5s; 
+  }
+  @keyframes holeOut {
+    0% {
+      opacity: 1;
+      transform-origin: 50% 50%;
+      transform: scale(1, 1) rotateY(0deg);
+    }
+  
+    100% {
+      opacity: 0;
+      transform-origin: 50% 50%;
+      transform: scale(0, 0) rotateY(180deg);
+    }
+  }
+
 @keyframes glowing{
     0% {
         box-shadow: inset 0 0 1px 1px gold, 0 0 15px goldenrod;
@@ -369,3 +387,4 @@ body{
 .last-token{
     animation:glowing 2500ms infinite;
 }
+
