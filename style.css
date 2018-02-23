@@ -41,6 +41,14 @@ body{
     height: 28vh;
     margin: -4% auto 0 auto;
 }
+.book{
+    position: absolute;
+    z-index: -1;
+    bottom: -8%;
+    overflow: visible;
+    height: 250px;
+}
+
 .game_board{
     display: flex;
     width: 41%;
@@ -279,12 +287,16 @@ body{
     margin: auto;
     text-align: center;
     top: 35%;
+
 }
 
 #win-message {
     margin-top: 40px;
     font-size: 50px;
+    background-image: url(images/confetti.gif);
+    background-position: center;
 }
+
 
 .reset-button {
     margin-top: 80px;
