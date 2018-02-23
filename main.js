@@ -126,7 +126,7 @@ function clearDomBoard(){
 
 
 function columnClicked(){
-    $('game_board > div').removeClass('last-token');
+    $('div').removeClass('last-token');
     console.log('column clicked');
     game.playerTurn = (game.playerTurn === "player1") ? "player2" : "player1";
     var column = $(this);
